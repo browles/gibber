@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='gibber'>
+  <head>
+    <meta charset="utf-8" />
+    <title>gibber</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body ng-controller='AppController'>
+    <div class='navigation'>
+      <h1 class='title'><a href='https://twitter.com/__gibber__'>gibber</a></h1>
+    </div>
+    <div id='container'>
+    <form name='formSearch' ng-submit='getMarkov(search)'>
+      <input name='search' class='search' placeholder='@user, #tag, and/or keyword' ng-model='search.query'/>
+      <img class='loading-gif-1' src='ajax-loader.gif' ng-if="loading">
+    </form>
+    <div class='results'>
+      <!-- <h2 class='last'>{{last}}</h2> -->
+      <li class='tweet' ng-repeat='tweet in tweets'>
+        <p class='tweetContent'>{{parseTweet(tweet.text)}}</p>
+        <img class='post-tweet' src='twitter_2012_positive.jpg' ng-click='postTweet(tweet)' ng-if="!tweet.complete">
+        <img class='loading-gif-2' src='ajax-loader-2.gif' ng-if="tweet.posted && !tweet.complete">
+      </li>
+    </div>
+    </div>
+
+    <script src="bundle.min.js"></script>
+  </body>
+</html>

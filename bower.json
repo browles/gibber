@@ -1,0 +1,21 @@
+{
+  "name": "gibber",
+  "version": "0.0.1",
+  "homepage": "https://github.com/browles/2014-07-solo",
+  "authors": [
+    "Hack Reactor Students <accounts@hackreactor.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-route": "~1.2.23",
+    "angular-resource": "~1.2.23"
+  }
+}
